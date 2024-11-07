@@ -17,15 +17,40 @@
         p {
             color: #666;
         }
+        .upload-btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .upload-btn i {
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
     <h1>Xin chào, thế giới!</h1>
     <p>Đây là trang web đầu tiên của bạn.</p>
+    <a href="#" class="upload-btn" onclick="uploadFile()">
+        <i class="fa fa-upload"></i> Tải lên file
+    </a>
     <script>
+        function uploadFile() {
+            var fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.onchange = function() {
+                // Xử lý file được chọn tại đây
+                console.log('File đã được chọn:', this.files[0]);
+            };
+            fileInput.click();
+        }
         document.addEventListener('DOMContentLoaded', function() {
             alert('Chào mừng bạn đến với trang web của tôi!');
         });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </body>
 </html>
